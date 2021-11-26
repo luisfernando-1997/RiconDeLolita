@@ -1,0 +1,140 @@
+.contenedor{
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.vector{
+    position: absolute;    
+    top: 423px;
+    width: 100%;
+}
+
+.contenedor-texto{
+    flex-basis: 100%; /* nota si no funciona al 100% lo cambiamos ah 50% o inverso*/
+    padding-left: 337px;
+    overflow: hidden; /*todo lo que salga del contenedor texto se esconda*/
+    color: white;
+    
+      
+    /* padding-top: 450px; bajar el texto*/
+    
+}
+
+.titulo{   
+    font-size: 69px;
+    font-family: 'Expletus Sans', cursive;
+    line-height: 72px;
+   /* letter-spacing: -0.02em;    Espacio de letras */
+   text-align: center;
+}
+
+.subtitulo{    
+    font-size: 55px;
+    font-weight: 500; /*Dismunye el relleno de la letra*/
+    margin: 20px 0; /* espacio de las letras arriba y abajo*/    
+    font-family: 'Salsa', cursive;
+    font-style: normal;    
+    line-height: 67px;
+    letter-spacing: -0.02em;    
+    text-align: center;
+    
+}
+
+.boton{
+    display: inline-block;
+    width: 400px;
+    padding: 15px 0;
+    text-align: center;
+    background: white;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #4776E6;
+    display: block;  /* El Display y margin hace que el boton este centrado*/
+    margin: 0em auto;    
+    font-family: 'Roboto', sans-serif;;   
+}
+
+.contenedor-imagenes{
+    flex-basis: 50%;
+    position: relative;     
+    z-index: 1; /* pone la ilustracion por encima del vector*/ 
+    overflow: hidden;
+    top: 389px;
+    right: 490px;
+    
+    
+}
+
+.ilustracion{
+    width: 105%;
+    animation: Animacion ease-in 1s infinite alternate;
+}
+
+@keyframes Animacion{
+    0%{
+        transform: scale(1);
+    }100%{
+        transform: scale(1.04);
+    }
+}
+
+/* Comienza Aplicar para Movil*/
+
+
+@media screen and (max-width: 800px){
+    .contenedor{
+        flex-direction: column-reverse;
+        
+    }
+    .vector{
+        width: 100%; /*abarca más tamaño, el vector blanco*/
+    }
+
+    .contenedor-texto{
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 40%; /* define el tamaño del eje principal paso hacer vertical*/
+        text-align: center;
+    }
+
+    .titulo{
+        font-size: 50px;
+    }
+
+    .subtitulo{
+        font-size: 30px;
+    }
+
+    .contenedor-imagenes{
+        flex-basis: 60%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img{
+        height: 90%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .vector{
+        width: auto; /* no deja que el wave blanco, se pierda en la parte superior*/
+        height: 100%;
+    }
+    .contenedor-textos{
+        flex-basis: 40%;
+        justify-content: flex-start; /*no se separa del texto tanto*/
+    }
+    .titulo{
+        font-size: 35px;
+    }
+    
+}
+
+

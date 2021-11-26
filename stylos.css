@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{    
+    background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
+    min-height: 100vh;
+}
+
+.container{
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.wave{
+    position: absolute;    
+    top: 0px;
+    width: 100%;
+}
+
+.contenedor-texto{
+    flex-basis: 50%; /* Determina el tamaño del flex-items en el eje vertical o horizntal, en este caso horizontal */
+    padding-left: 45px;
+    color: white;      
+    padding-top: 570px; /*bajar el texto*/
+    
+}
+
+.titulo{   
+    font-size: 58px;
+    font-family: 'Expletus Sans', cursive;
+   /* letter-spacing: -0.02em;    Espacio de letras */
+   text-align: center;
+}
+
+.subtitulo{    
+    font-size: 50px;
+    font-weight: 500; /*Dismunye el relleno de la letra*/
+    margin: 20px 0; /* espacio de las letras arriba y abajo*/    
+    font-family: 'Salsa', cursive;         
+    text-align: center;
+    
+}
+
+.boton{
+    display: inline-block;
+    width: 400px;
+    padding: 15px 0;
+    text-align: center;
+    background: white;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #4776E6;
+    display: block;  /* El Display y margin hace que el boton este centrado*/
+    margin: 0em auto;    
+    font-family: 'Roboto', sans-serif;;   
+}
+
+.contenedor-imagenes{
+    flex-basis: 50%;
+    position: relative;     
+    z-index: 1; /* pone la ilustracion por encima del vector*/     
+    text-align: center;
+    padding-top: 490px;
+    
+    
+}
+
+.ilustracion{
+    width: 85%;
+    animation: Animacion ease-in 1s infinite alternate;
+}
+
+@keyframes Animacion{
+    0%{
+        transform: scale(1);
+    }100%{
+        transform: scale(1.04);
+    }
+}
+
+/* Empezamos aplicar Stylos para tamaño celular*/
+
+@media screen and (max-width: 800px){
+
+    .container{
+        
+        flex-direction: column-reverse;
+    }
+
+    .vector{
+        width: 100%; /*abarca más tamaño, el vector blanco*/
+    }
+    .contenedor-textos{
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 40%; /* define el tamaño del eje principal paso hacer vertical*/
+        text-align: center;
+    }
+    .titulo{
+        font-size: 40px;
+    }
+    .subtitulo{
+        font-size: 20px;
+    }
+    .contenedor-imagen{
+        flex-basis: 60%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+       
+    }
+    .ilustracion{
+        width: 20%;
+    }
+
+}
+
+@media screen and (max-width: 500px){
+    .wave{
+        width: auto; /* no deja que el wave blanco, se pierda en la parte superior*/
+        height: 48%;
+    }
+    .contenedor-textos{
+        flex-basis: 40%;
+        justify-content: flex-start; /*no se separa del texto tanto*/
+        align-items: center;
+    }
+    .titulo{
+        font-size: 35px;
+    }
+}
